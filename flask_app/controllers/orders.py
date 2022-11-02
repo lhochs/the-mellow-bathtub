@@ -51,7 +51,7 @@ def addToCart():
 # This route where user can view items he/she added to cart
 @app.route("/cart")
 def cart():
-    tax_percent = 0.01025 #hard-code
+    tax_percent = 0.1025 #hard-code
     cart={}
     sub_total = 0.00
     tax_amount = 0
