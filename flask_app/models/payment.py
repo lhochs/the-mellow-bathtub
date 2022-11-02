@@ -3,7 +3,7 @@ from flask_app.models.user import User
 from flask import flash
 
 class Payment:
-    db = 'group6project'
+    db = "mellow_bathtub_schema"
 
     def __init__(self,data):
         self.payment_id = data['payment_id']

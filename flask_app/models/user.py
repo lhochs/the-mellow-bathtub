@@ -4,7 +4,8 @@ import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class User:
-    db = 'group6project'
+    db = "mellow_bathtub_schema"
+    
     def __init__( self , data ):
         print(data)
         self.user_id = data['user_id']

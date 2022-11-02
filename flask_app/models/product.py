@@ -4,7 +4,8 @@ from flask_app.models.user import User
 from flask import flash
 
 class Product:
-    db = 'group6project'
+    db = "mellow_bathtub_schema"
+    
     def __init__(self,data):
         self.product_id = data['product_id']
         self.product_name = data['product_name']

@@ -3,7 +3,7 @@ from flask_app.models.product import Product
 import json
 
 class Order:
-    db = "group6project"
+    db = "mellow_bathtub_schema"
 
     def __init__( self , data ):
         self.order_id = data["order_id"]
