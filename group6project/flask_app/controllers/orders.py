@@ -201,4 +201,3 @@ def submit_checkout():
     new_order = Order.add(data)
 
     return redirect("/customer_dashboard/" + new_order)
-
