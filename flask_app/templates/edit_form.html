@@ -9,81 +9,92 @@
     <script type="text/javascript" src="{{ url_for('static', filename='/js/my_script.js') }}"></script>
     <title>The Mellow Bathtub</title>
 </head>
-<div class="B9">
-    <body>
-        <div class="container">
-            <div class="nav-top-r">
-                <a href="/logout">Sign Out</a>
-                <span> | </span>
-                <a href="/">Return to Homepage</a>
+<body>
+    <div class="container">
+        <div class="nav-top-r">
+            <a href="/logout">Sign Out</a>
+            <span> | </span>
+            <a href="/">Return to Homepage</a>
+        </div>
+        <div class="nav-bar">
+            <div class="nav-bar-title">
+                <h1>The Mellow Bathtub</h1>
             </div>
-            <div class="nav-bar">
-                <div class="nav-bar-title">
-                    <h1>The Mellow Bathtub</h1>
-                </div>
-                <div class = "nav-bar-link" >
-                    <a href="/company">About Our Company</a>
-                </div>
-            </div>
-            <div class="add-prod-title">
-                <h3>Edit {{product.product_name}}</h3>
-            </div>
-            <div>
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <p>{{message}}</p>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
-            <div>
-                <form action="/user/edit_product/submit_edit" method="post">
-                    <div class="B8">
-                        <div class="A7">
-                            <input type="hidden" name="user_id" value="{{session.user_id}}">
-                            <input type="hidden" name="product_id" value="{{product.product_id}}">
-                            <div class="A8">
-                                <section class="B1">
-                                    <label class="B6" for="product_name">Product Name:</label>
-                                    <input type="text" name="product_name" value="{{product.product_name}}">
-                                </section>
-                                <section>
-                                    <label  for="product_quantity">Quantity:</label>
-                                    <input type="text" name="product_quantity" value="{{product.product_quantity}}">
-                                </section>
-                            </div>
-                            <div class="A9">
-                                <section class="B2">
-                                    <label class="B4" for="product_description">Description:</label>
-                                    <textarea name="product_description" cols="25" rows="6" >{{product.product_description}}</textarea>
-                                </section>
-                                <section>
-                                    <label for="price_per_unit">Price per unit:</label>
-                                    <input type="number" name="price_per_unit" value="{{product.price_per_unit}}">
-                                </section>
-                            </div>
-                            <div class="A10">
-                                <section class="B3">
-                                    <label class="B5" for="product_instructions">Product Instructions:</label>
-                                    <textarea name="product_instructions" cols="25" rows="6" >{{product.product_instructions}}</textarea>
-                                </section>
-                                <section>
-                                    <label for="product_img">Upload Image: </label>
-                                    <input type="file" name="product_img" value="{{product.product_img}}">
-                                </section>
-                            </div>
-                            <section class="A11">
-                                <button type="submit">Update Product</button>
-                            </section>
-        
-                        </div>
-                    </div>
-                </form>
+            <div class = "nav-bar-link" >
+                <a href="/company">About Our Company</a>
             </div>
         </div>
-    </body>
+        <div class="edit-prod-title">
+            <h3>Edit {{product.product_name}}</h3>
+        </div>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="edit-prod-body">
+            <form class="edit-form" action="/user/edit_product/submit_edit" method="POST">
+                <input type="hidden" name="user_id" value="{{session.user_id}}">
+                <input type="hidden" name="product_id" value="{{product.product_id}}">
+                <div class="row">
+                    <div class="form-group row col">
+                        <label class="control-label col-sm-4" for="product_name">Product Name:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="product_name" value="{{product.product_name}}">
+                        </div>
+                    </div>
+                    <div class="form-group row col">
+                        <label  class="control-label col-sm-4" for="product_quantity">Quantity:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="product_quantity" value="{{product.product_quantity}}">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="form-group row col">
+                        <label class="control-label col-sm-4" for="product_description">Description:</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" name="product_description" cols="25" rows="6" >{{product.product_description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row col">
+                        <label class="control-label col-sm-4" for="price_per_unit">Price:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="price_per_unit" value="{{product.price_per_unit}}">
+                        </div>
+                        <label class="control-label col-sm-4" for="product_img">Upload Image: </label>
+                        <div class="col-sm-6">
+                            <input type="file" class="form-control" name="product_img" value="{{product.product_img}}">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="form-group row col">
+                        <label class="control-label col-sm-4" for="product_instructions">Product Instructions:</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" name="product_instructions" cols="25" rows="6" >{{product.product_instructions}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row col">
+                        <label class="control-label col-sm-4"></label>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="edit-prod-button">
+                    <button type="submit" class="btn btn-primary">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
 
-</div>
 </html>
 

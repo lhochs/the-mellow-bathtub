@@ -79,115 +79,46 @@
 /* ADD PRODUCT FORM */
 .add-prod-title{
     text-align: center;
-    padding-bottom: 10px;
+    padding: 2% 0% 0% 0%;
+    /* padding-bottom: 10px; */
 }
-/*  Add and Edit forms*/ 
-.A1{
+
+.add-form{
+    padding-left: 8%;
+    /* border: 2pt dotted red; */
+}
+
+.add-prod-body{
+    /* border: 2pt dotted red; */
+    padding: 4%;
+}
+
+.add-prod-button{
     text-align: center;
-    padding-bottom: 10px;
+    padding-right: 8%;
 }
 
-.A2{
-    align-items: center;
-    display: flex;
-    padding-left: 630px;
+/* EDIT PRODUCT FORM */
+
+.edit-prod-title{
+    text-align: center;
+    padding: 2% 0% 0% 0%;
+    /* padding-bottom: 10px; */
 }
 
-.A3{
-    padding-right: 200px;
+.edit-form{
+    padding-left: 8%;
+    /* border: 2pt dotted red; */
 }
 
-.A4{
-    padding-right: 3px;
+.edit-prod-body{
+    /* border: 2pt dotted red; */
+    padding: 4%;
 }
 
-.A5{
-    padding-left: 3px;
-}
-
-.A6{
-    padding-bottom: 10px;
-}
-
-.A7{
-    display: inline-block;
-    position: center;
-    border: solid black 2px;
-    margin-left: 80px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-    padding-right: 10px;
-    background-color: white;
-}
-
-.A8{
-    padding-left: 1px;
-    padding-right: 1px;
-    padding-bottom: 50px;
-    align-items: baseline;
-    align-items: center;
-    display: flex;
-}
-
-.A9{
-    padding-left: 1px;
-    padding-right: 1px;
-    padding-bottom: 50px;
-    align-items: baseline;
-    align-items: center;
-    display: flex;
-}
-
-.A10{
-    padding-left: 1px;
-    padding-right: 10px;
-    align-items: baseline;
-    align-items: center;
-    display: flex;
-}
-
-.A11{
-    padding-right: 1px;
-    padding-left: 600px;
-}
-
-.A12{
-    padding-bottom: 15px;
-}
-
-.B1{
-    padding-right: 100px;
-}
-
-.B2{
-    padding-right: 85px;
-}
-
-.B3{
-    padding-right: 90px;
-}
-
-.B4{
-    padding-right: 90px;
-}
-
-.B5{
-    padding-right: 30px;
-}
-
-.B6{
-    
-    padding-right: 65px;
-}
-
-.B7{
-    padding-right: 37px;
-}
-
-.B9{
-    background-image: radial-gradient( lightblue ,white);
-    padding-top: 0px;
+.edit-prod-button{
+    text-align: center;
+    padding-right: 8%;
 }
 
 /* SINGLE VIEW/PRODUCT */
