@@ -42,11 +42,6 @@ def add_product_to_db():
     # print("jk here is the real issue")
     return redirect('/seller_dashboard')
 
-# This is where user can edit product
-
-# @app.route("/user/edit_product/<id>")
-# def edit_product(id):
-#     return render_template("add_edit_product_form.html") //duplicate code what is this for?
 
 #route to view one product
 # @app.route("/product/<id>")

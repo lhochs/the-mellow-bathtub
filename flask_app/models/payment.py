@@ -12,21 +12,15 @@ class Payment:
 
     @classmethod
     def get_payment_by_id(cls, data):
-        query = """
-            SELECT payment_id, credit_num, billing_address, created_at, updated_at
-            FROM payments 
-            WHERE payment_id = %(payment_id)s
-        """
-        results = connectToMySQL(cls.db).query_db(query)
-
+        query = " SELECT * FROM payments WHERE payment_id = %(payment_id)s);"
+        results = connectToMySQL(cls.db).query_db(query, data)
         payment = cls(results[0])
-
         return payment
     
     @classmethod
     def save(cls, data):
         query = "INSERT INTO payments(credit_num,billing_address) VALUES(%(credit_num)s,%(billing_address)s);"
-        
+        print("Saving payment query as:", query)
         return connectToMySQL(cls.db).query_db(query,data)
     
     @staticmethod
