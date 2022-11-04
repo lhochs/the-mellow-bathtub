@@ -52,12 +52,10 @@
                         <div class="product_qty">
                             <form action= "/cart/update/{{product_id}}" method="POST">
                             <p class="price_per_unit">Price: {{((cart[product_id].quantity | int) * cart[product_id].price_per_unit) | currencyFormat}}</p>
-                            <!-- {{(cart[product_id].quantity * cart[product_id].price_per_unit) | currencyFormat}} -->
-                            <!-- <p className="quantity">Quantity: {{cart[product_id].quantity}}</p> -->
                             <label name="product_qty" for="quantity">Qty: </label>
                             <input type="number" name="product_quantity" value="{{cart[product_id].quantity}}" max="10">
                             <br>
-                            <button class="sC-btn btn-primary" action="submit">update</button>  <!-- "/cart/update/{{product_id}}" --> 
+                            <button class="sC-btn btn-primary" action="submit">update</button> 
                             </form>
                             <form action="/cart/delete/{{product_id}}" method="POST"><button class="sC-btn btn-danger" action="submit">remove</button>
                             </form>
@@ -84,9 +82,9 @@
                         </div>
                     </div>
                     <div class="total">
-                        <h2>Total: {{total | currencyFormat}}</h2>
+                        <h2>Total: {{grand_total | currencyFormat}}</h2>
                     </div>
-                    <a href=""><button class="btn btn-danger">Check Out</button></a>
+                    <a href="/checkout/{{session.user_id}}"><button class="btn btn-danger">Check Out</button></a>
                 </div>
             </div>
         </div>

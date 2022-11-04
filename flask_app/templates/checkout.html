@@ -10,35 +10,86 @@
 </head>
 <body>
     <div class="container">
-        <div class="top-nav">
-            <h1 class="sCart-title">Add Payment</h1>
+        <div class="nav-top-r">
+            <a href="/logout">Sign Out</a>
+            <span> | </span>
+            <a href="/">Return to Homepage</a>
         </div>
-        <div class="-body"></div>
-            <form action="/payment" method ="post">
-                <div class="error_message">
-                    {% with messages = get_flashed_messages() %}     
-                        {% if messages %}    
-                            <div class="alert" role ="alert">
-                                <strong>Invalid Entry!!!</strong>                      
-                                {% for message in messages %}           
-                                    <p>{{message}}</p>
-                                {% endfor %}
-                            </div>  
-                        {% endif %}
-                    {% endwith %}
+        <div class="nav-bar">
+            <div class="nav-bar-title">
+                <h1>The Mellow Bathtub</h1>
+            </div>
+            <div class = "nav-bar-link" >
+                <!-- <a href="/company">About Our Company</a> -->
+            </div>
+        </div>
+        <div class="checkout-cart">
+            <div class="checkout-left">
+                <form action="/checkout/{{session.user_id}}/save_order_details" method ="POST">
+                    <div class="error_message">
+                        {% with messages = get_flashed_messages() %}     
+                            {% if messages %}    
+                                <div class="alert" role ="alert">
+                                    <strong>Invalid Entry!!!</strong>                      
+                                    {% for message in messages %}           
+                                        <p>{{message}}</p>
+                                    {% endfor %}
+                                </div>  
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="first_name" value="{{user.first_name}}">
+                        <input type="text" class="form-control" name="last_name" value="{{user.last_name}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="address" placeholder="Please Enter Your Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" value="{{user.email}}">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Proceed to Payment" class="page-btn">
+                    </div>
+            </div>
+            <div class="checkout-right">
+                <div class="cO-cost">
+                    <h1><u>Order Summary</u></h1>
+                    <div class="cost">
+                        <div class="top">
+                            <h3>Subtotal: {{sub_total | currencyFormat}}</h3>
+                        </div>
+                        <div class="mid">
+                            <h3>Shipping: {{shipping_cost | currencyFormat}}</h3>
+                        </div>
+                        <div class="bottom">
+                            <h3>Tax: {{tax_amount | currencyFormat}}</h3>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h2>Order Total: {{grand_total | currencyFormat}}</h2>
+                    </div>
+                    <h3>Order Items</h3>
                 </div>
-                <div class="checkout_form">
-                    <label for="credit_num">Credit Card Number: </label>
-                    <br>
-                    <input type="text" name="credit_num" required>
+                <div class="cO-items">
+                    {% for product_id in cart %}
+                    <div class="cO-flex">
+                        <div class="cO-photo">
+                            <img src="{{ url_for('static', filename='/imgs/' + cart[product_id].product_img) }}">
+                        </div>
+                        <div class="cO-product_info">
+                            <a href="/user/single_product/{{cart[product_id].product_id}}"><h6 className="product_name">{{cart[product_id].product_name}}</h6></a>
+                            <p class="product_description">{{cart[product_id].product_description | truncate(250) }}</p>
+                        </div>
+                        <div class="cO-product_qty">
+                            <p class="price_per_unit">Price: {{((cart[product_id].quantity | int) * cart[product_id].price_per_unit) | currencyFormat}}</p>
+                            <label name="product_qty" for="quantity">Qty: {{cart[product_id].quantity}}</label>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
-                <div class="checkout_form">
-                    <label for="billing_address">Billing Address: </label>
-                    <br>
-                    <textarea name="billing_address" cols="20" rows="3" required></textarea>
-                </div>
-                <input type="submit" value="Submit Payment" class="page-btn">
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>

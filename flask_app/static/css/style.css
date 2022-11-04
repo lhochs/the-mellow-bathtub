@@ -232,6 +232,73 @@ input[type='number']{
     padding: 3%;
 }
 
+/* CHECKOUT ORDER DETAILS */
+
+.checkout-cart{
+    display: flex;
+    /* justify-content: space-between;  */
+    width: 100%;
+}
+.checkout-left{
+    /* border: 2px dotted red; */
+    border-right-style: solid; 
+    width: 50%;
+}
+.checkout-right{
+    /* border: 2px dotted red; */
+    /* border-right-style: solid ; */
+    width: 50%;
+    /* margin: 2% 0 2% 2%; */
+}
+
+.cO-items{
+    margin: 0% 0% 0% 5%;
+    background-color: aliceblue;
+    /* border-top: 2px dotted grey; */
+}
+
+.cO-flex{
+    /* border: 2px dotted red; */
+    margin: 0% 0% 0% 0%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 2px dotted grey; */
+}
+
+.cO-flex img{
+    /* border: 2px dotted red; */
+    height: 220px;
+    width: 200px;
+}
+
+.cO-product_qty{
+    /* border: 2px dotted red; */
+    width: 60%;
+    padding: 2% 2% 0% 0%;
+    text-align: end;
+}
+
+/* .sC-photo {
+    margin: 0 ;
+} */
+
+.cO-product_info{
+    margin: 0% 2% 0% 2%;
+}
+
+.cO-product_info p{
+    text-align: start;
+} 
+
+.cO-cost{
+    /* border: 2px dotted red; */
+    text-align: center;
+    width: auto;
+    padding-top: auto;
+    margin: 2% 2% 2% 0;
+}
+
 /* OUR COMPANY */
 
 body{

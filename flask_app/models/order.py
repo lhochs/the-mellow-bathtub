@@ -44,7 +44,22 @@ class Order:
             order = cls(results[0])
 
         return order
-        
+    
+    # @classmethod
+    # def view_order_details(cls, data):
+
+    @classmethod
+    def save(cls, data):
+        query = "INSERT INTO orders (address, sub_total, taxes, grand_total, order_date, customer_id, payment_id) VALUES (%(address)s, %(sub_total)s, %(taxes)s, %(grand_total)s, NOW(), %(customer_id)s, %(payment_id)s);"
+        print("Saving order id query as:", query)
+        return connectToMySQL(cls.db).query_db(query, data)
+
+    @classmethod
+    def save_order_details(cls,data):
+        query = "INSERT INTO orderDetails (order_id, product_id, product_quantity) VALUES (%(order_id)s, %(product_id)s, %(product_quantity)s);"
+        print("Saving order details information as:", query)
+        return connectToMySQL(cls.db).query_db(query, data)
+
     @classmethod
     def add(cls, data):
         order_data = {
