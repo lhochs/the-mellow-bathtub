@@ -42,19 +42,19 @@
         </div>
         <div class="h-body">
             {% for i in all_products %}
-                <div class="h-product-card">
-                    <img src="{{ url_for('static', filename='/imgs/' + i.product_img) }}">
-                    <a href="/user/single_product/{{i.product_id}}">{{i.product_name}}</a>
-                    <p>{{i.price_per_unit | currencyFormat}}</p>
-                    <button class="btn btn-primary product-btn" 
+                <div class="card" style="height: 23rem; width: 16rem ;border: none;">
+                    <img src="{{ url_for('static', filename='/imgs/' + i.product_img) }}" class="card-img-top" style="width: 200px; align-self: center;">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="/user/single_product/{{i.product_id}}">{{i.product_name}}</a></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{i.price_per_unit | currencyFormat}}</h6>
+                        <button class="btn btn-primary product-btn" 
                         data-id={{i.product_id}}
                         data-product-name="{{i.product_name}}"
                         data-product-description = "{{i.product_description}}"
                         data-price-per-unit={{i.price_per_unit}}
-                        data-product-img="{{ i.product_img }}"
-                    >
-                        Add To Cart
-                    </button>
+                        data-product-img="{{ i.product_img }}">Add To Cart</button>
+                    </div>
                 </div>
             {%endfor%}
         </div>
