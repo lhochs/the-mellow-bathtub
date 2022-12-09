@@ -17,10 +17,12 @@
             {% else %}
             <a href="/login_and_register">Sign in | Register</a>
             {% endif %}
+            <span> | </span>
+            <a href="/">Return to Homepage</a>
         </div>
         <div class="nav-bar">
             <div class="nav-bar-title">
-                <h1>The Mellow Bathtub</h1>
+                <img style="height:200px;" src="{{ url_for('static', filename='/imgs/theMellowBath.png')}}">
             </div>
             <div class = "nav-bar-link" >
                 <a href="/company">About Our Company</a>
@@ -55,9 +57,9 @@
                             <label name="product_qty" for="quantity">Qty: </label>
                             <input type="number" name="product_quantity" value="{{cart[product_id].quantity}}" max="10">
                             <br>
-                            <button class="sC-btn btn-primary" action="submit">update</button> 
+                            <button class="btn btn-primary" style ="width: 80px; margin: 3px 0px;" action="submit">update</button> 
                             </form>
-                            <form action="/cart/delete/{{product_id}}" method="POST"><button class="sC-btn btn-danger" action="submit">remove</button>
+                            <form action="/cart/delete/{{product_id}}" method="POST"><button class="btn btn-danger" style ="width: 80px;" action="submit">remove</button>
                             </form>
                         </div>
                     </div>
