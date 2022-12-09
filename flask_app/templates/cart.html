@@ -27,17 +27,17 @@
             </div>
         </div>
 
-        <div class="sCart-top-nav">
-            <h3 class="sCart-title">Your Shopping Cart</h3>
-            {%with messages = get_flashed_messages()%}
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="error-message">{{message}}</p>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </div>
         <div class="sC-body">
+            <div class="sCart-top-nav">
+                <h3 class="sCart-title">Your Shopping Cart</h3>
+                {%with messages = get_flashed_messages()%}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="error-message">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
             <div class="shoppingcart">
                 <div class="sC-items">
                     {% for product_id in cart %}

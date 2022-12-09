@@ -8,14 +8,16 @@
 
 .container{
     /* border: 2px dotted red; */
-    margin: auto;
-    background-color: white;
+    height: 100%;
+    margin: 0% auto 0% auto;
+    /* background-color: rgb(255, 254, 254,.10); */
     padding: 2%;
+    background-color: rgb(255, 254, 254,.80);
 }
 
 .nav-top-r{
     text-align: right;
-    background-color:white;
+    background-color:transparent;
 }
 
 .nav-bar{
@@ -27,9 +29,10 @@
 }
 
 .nav-bar-title{
-    border-bottom-style: solid;
-    background-color:white;
+    /* border-bottom: 2pt solid rgb(255, 255, 255); */
+    background-color:transparent;
     padding: 0% 0% 2% 0%;
+    text-decoration: underline;
 }
 
 .nav-bar-link{
@@ -43,17 +46,24 @@
 }
 
 .h-body{
-    background-image: radial-gradient( lightblue ,white);
     /* background-image: linear-gradient(to right,lightblue,white); */
-    width: auto;
-    height: auto;
+    background-repeat: no-repeat;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     /* justify-content: space-around; */
 }
 
-.h-product-card{
+.card{
+    max-width: 22%;
+    text-align: center;
+    align-content: center;
+    margin: 1.5%;
+    padding: 1% 0%;
+    background-color: rgb(255, 254, 254,.0);
+}
+
+/* .h-product-card{
     max-height: 12%;
     max-width: 20%;
     text-align: center;
@@ -65,11 +75,9 @@
 }
 .h-product-card img {
     width: 100%;
-}
+} */
 
 /* SELLER DASHBOARD */
-
-
 
 .seller-title{
     padding: 2%;
@@ -124,13 +132,14 @@
 /* SINGLE VIEW/PRODUCT */
 
 .sv-body{
-    background-image: radial-gradient( lightblue ,white);
+    padding-top: 4.5%;
 }
 .sv-product-card{
     /* border: 2pt dotted red; */
     width: 50%;
     margin: auto;
-    padding: 2%;
+    padding: 0% 2% 2% 2%;
+    border-radius: 10%;
     /* background-color: aliceblue; */
 }
 
@@ -139,7 +148,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 80%;
-    padding: 5%;
+    padding: 0% 5% 5% 5%;
 }
 
 .sv-title{
@@ -152,13 +161,11 @@
 
 /* SHOPPING CART */
 
-.sCart-top-nav{
-    text-align: center;
-}
-
 .sC-body{
     /* border: 2px dotted red; */
     text-align: center;
+    padding: 2%;
+    /* background-color: rgb(255, 254, 254,.85); */
 }
 
 .shoppingcart{
@@ -170,7 +177,7 @@
 
 .sC-items{
     /* border: 2px dotted red; */
-    border-right-style: solid ;
+    border-right: 2pt solid rgba(135, 217, 250);
     width: 100%;
     margin: 2% 0 2% 2%;
 }
@@ -185,7 +192,12 @@ input[type='number']{
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    /* transition: 1s; */
 }
+
+/* .flex:hover{
+    background-color: rgb(255, 254, 254,.90);
+} */
 
 .flex img{
     height: 220px;
@@ -225,7 +237,7 @@ input[type='number']{
 
 .cost{
     padding: 3%;
-    border-bottom-style: solid;
+    border-bottom: 2pt solid rgba(135, 217, 250);
 }
 
 .total{
@@ -238,12 +250,19 @@ input[type='number']{
     display: flex;
     /* justify-content: space-between;  */
     width: 100%;
+    /* background-color: rgb(255, 254, 254,.90); */
+    padding:2%;
 }
 .checkout-left{
     /* border: 2px dotted red; */
-    border-right-style: solid; 
+    border-right: 2pt solid rgba(135, 217, 250);
     width: 50%;
 }
+
+.form-group{
+    padding: 2%;
+}
+
 .checkout-right{
     /* border: 2px dotted red; */
     /* border-right-style: solid ; */
@@ -253,7 +272,7 @@ input[type='number']{
 
 .cO-items{
     margin: 0% 0% 0% 5%;
-    background-color: aliceblue;
+    background-color: rgba(135, 217, 250, 0.35);;
     /* border-top: 2px dotted grey; */
 }
 
@@ -302,7 +321,10 @@ input[type='number']{
 /* OUR COMPANY */
 
 body{
-    background-image: radial-gradient( lightblue ,white);
+    background-image: url('../imgs/background_imgs/heidi-kaden-gcKomw5peMo-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    /* background-image: radial-gradient( lightblue ,white); */
 }
 
 .comp-body{
