@@ -27,7 +27,7 @@
         </div>
         <div class="nav-bar">
             <div class="nav-bar-title">
-                <h1>The Mellow Bathtub</h1>
+                <img style="height:200px;" src="{{ url_for('static', filename='/imgs/theMellowBath.png')}}">
                 {%with messages = get_flashed_messages()%}
                     {% if messages %}
                         {% for message in messages %}
