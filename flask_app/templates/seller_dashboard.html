@@ -44,7 +44,7 @@
                         {%for i in all_products%}
                         <tr>
                             <th scope="row">{{i.product_id}}</td>
-                            <td>{{i.product_name}}</td>
+                            <td><a href="/user/single_product/{{i.product_id}}">{{i.product_name}}</a></td>
                             <td>{{i.product_quantity}}</td>
                             <td>{{i.users.first_name}} {{i.users.last_name}}</td>
                             <td>
