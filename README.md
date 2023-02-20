@@ -4,7 +4,7 @@ Stack: Python
 
 Description:
 
-[ADD STORE DESCRIPTION]
+This is a web site that allows users to upload products (bath bomb related products) to an online shop. Then, customers can purchase products.
 
 Features:
 
