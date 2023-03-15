@@ -54,7 +54,8 @@ def seller_dashboard():
         flash("Only registered sellers can access the Seller Dashboard.")
         return redirect("/")
     products = Product.get_all_products_with_users()
-    return render_template("seller_dashboard.html",  all_products = products)
+    user = User.get_by_id(session)
+    return render_template("seller_dashboard.html",  all_products = products, users = user)
 
 #####################################
 #### This is where the API stays ####

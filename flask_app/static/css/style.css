@@ -7,36 +7,55 @@
 /* ALL PAGES */
 
 .container{
-    /* border: 2px dotted red; */
-    height: auto;
-    margin: 0% auto 0% auto;
+    border: 2px dotted red;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
     /* background-color: rgb(255, 254, 254,.10); */
-    padding: 2%;
+    
     background-color: rgb(255, 254, 254,.60);
 }
 
 .nav-top-r{
-    text-align: right;
-    background-color:transparent;
+    background-color: black;
+    color: rgb(242, 242, 242);
+    padding: .5% 0 0 35%;
+    display: flex;
+    justify-content: space-between;
 }
-
+.nav-quote{
+    height: 100%;
+}
+.nav-controls{
+    height: 100%;
+}
+.nav-top-r a{
+    color: white;
+    font-size: 12pt;
+}
 .nav-bar{
     /* border: 2px dotted purple; */
     width: 100%;
     margin: 0;
+    padding: 0; 
     align-items: center;
     text-align: center;
+    background-color: rgb(242, 242, 242);
+    position: fixed;
 }
 
 .nav-bar-title{
-    /* border-bottom: 2pt solid rgb(255, 255, 255); */
-    background-color:transparent;
-    padding: 0% 0% 2% 0%;
-    text-decoration: underline;
+    /* border-bottom: 2pt solid rgba(9, 8, 8,.2); */
+    padding:.5% 0;
+    margin: 0% 0% 0% 0%;
+    width: 100vw;
+    /* text-decoration: underline; */
+    /* background-color:rgba(198, 217, 237, 0.797) ; */
 }
 
 .nav-bar-link{
-    padding-top: 1%;
+    padding: 0% 0% 0.5% 0%;
+    /* border: 2px dotted blue; */
 }
 
 .btn{
@@ -52,13 +71,34 @@
     color: red;
 }
 
+.h-video{
+    border: 2px dotted blue;
+    /* position: fixed; */
+    object-fit: cover;
+    height: 95vh;
+
+}
+video{
+    width: 100vw;
+    margin: 10% 0 0 0;
+}
+
+
 .h-body{
     /* background-image: linear-gradient(to right,lightblue,white); */
-    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    background-color: aliceblue;
+    /* justify-content: space-around; */
+}
+
+.h-body-inner{
+    margin: 0 10% 0 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    /* justify-content: space-around; */
+    background-color: transparent;
+    position: relative;
 }
 
 .card{
@@ -67,7 +107,7 @@
     align-content: center;
     margin: 1.5%;
     padding: 1% 0%;
-    background-color: rgb(255, 254, 254,.0);
+    background-color: rgb(255, 254, 254,0);
 }
 
 /* .h-product-card{
@@ -328,14 +368,14 @@ input[type='number']{
 /* OUR COMPANY */
 
 body{
-    background-image: url('../imgs/background_imgs/heidi-kaden-gcKomw5peMo-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-size: 100vw;
+    /* background-image: url('../imgs/background_imgs/heidi-kaden-gcKomw5peMo-unsplash.jpg'); */
     /* background-image: radial-gradient( lightblue ,white); */
+    /* background-color: aliceblue; */
 }
 
 .comp-body{
-    width: 80%;
+    width: 100%;
+    height: 100vh;
     margin: auto;
 }
 
