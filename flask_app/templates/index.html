@@ -14,22 +14,26 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="nav-top-r">
-            {% if session.user_id %}
-            <a href="/logout">Logout</a>
-            <span> | </span>
-            <a href="/seller_dashboard">Seller Dashboard</a>
-            {% else %}
-            <a href="/login_and_register">Sign in | Register</a>
-            {% endif %}
-            <a href="/cart"><svg xmlns="http://www.w3.org/2000/svg" color="black" width="30px" height="30px" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg></a>
-        </div>
         <div class="nav-bar">
+            <div class="nav-top-r">
+                <p class="nav-quote" style="font-size: 13pt;">
+                    "Start the day with a smile and end the day with a bath bomb"
+                </p>
+                <div class="nav-controls">
+                    {% if session.user_id %}
+                    <a href="/logout">Logout</a>
+                    <span> | </span>
+                    <a href="/seller_dashboard">Seller Dashboard</a>
+                    {% else %}
+                    <a href="/login_and_register">Sign in | Register</a>
+                    {% endif %}
+                    <a href="/cart"><svg xmlns="http://www.w3.org/2000/svg" color="white" width="25px" height="25px" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg></a>
+                </div>
+            </div>
             <div class="nav-bar-title">
-                <img style="height:200px;" src="{{ url_for('static', filename='/imgs/theMellowBath.png')}}">
+                <img style="height:120px;" src="{{ url_for('static', filename='/imgs/theMellowBath.png')}}">
                 {%with messages = get_flashed_messages()%}
                     {% if messages %}
                         {% for message in messages %}
@@ -42,8 +46,16 @@
                 <a href="/company">About Our Company</a>
             </div>
         </div>
+        <div class="h-video">
+            <video autoplay muted loop><source src="{{ url_for('static', filename='/imgs/rubber-duck-33221.mp4')}}" type="video/mp4"></video>
+        </div>
+        <script>
+            document.getElementById('h-video').play();
+        </script>
+        <!-- <div class="container"> -->
         <div class="h-body">
-            {% for i in all_products %}
+            <div class="h-body-inner">
+                {% for i in all_products %}
                 <div class="card" style="height: 23rem; width: 16rem ;border: none;">
                     <img src="{{ url_for('static', filename='/imgs/' + i.product_img) }}" class="card-img-top" style="width: 200px; align-self: center;">
                     
@@ -58,9 +70,10 @@
                         data-product-img="{{ i.product_img }}">Add To Cart</button>
                     </div>
                 </div>
-            {%endfor%}
+                {%endfor%}
+            </div>
         </div>
-    </div>
+    <!-- </div> -->
 
     <script>
         (function(){
